@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isabel Brouwer — Verbinder met een missie die groter is dan ikzelf</title>
+  <meta name="description" content="Isabel Brouwer. Gecommitteerd aan de gezondheid van mens, aarde en onderneming." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --olive:        #4a5a2c;
+      --olive-light:  #7a8c6e;
+      --olive-pale:   #c8d4b8;
+      --gold:         #c8972a;
+      --gold-light:   #e8c06a;
+      --gold-pale:    #f5e8c8;
+      --cream:        #faf6ee;
+      --sand:         #f0e8d4;
+      --sand-deep:    #ddd0b4;
+      --clay:         #c4724a;
+      --clay-light:   #e8aa88;
+      --ink:          #2a2416;
+      --ink-mid:      #4a3c28;
+      --ink-light:    #7a6a50;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid var(--sand-deep); display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 2.5rem; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul a { text-decoration: none; font-size: 13px; font-weight: 400; letter-spacing: 0.06em; color: var(--olive); transition: color 0.2s; }
+    nav ul a:hover { color: var(--gold); }
+
+    .hero-wrap { background: var(--olive); }
+    .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 88vh; max-width: 1200px; margin: 0 auto; }
+    .hero-left { background: var(--olive); padding: 5rem 3rem 4rem; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+    .hero-blob { position: absolute; width: 320px; height: 320px; background: var(--gold); opacity: 0.08; border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%; bottom: -80px; right: -20px; pointer-events: none; }
+    .hero-blob2 { position: absolute; width: 200px; height: 200px; background: var(--olive-pale); opacity: 0.10; border-radius: 40% 60% 30% 70% / 60% 30% 70% 40%; top: -60px; left: -40px; pointer-events: none; }
+    .hero-eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1.5rem; font-weight: 400; }
+    .hero-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(30px, 3.5vw, 46px); font-weight: 300; line-height: 1.25; color: var(--cream); margin-bottom: 1rem; }
+    .hero-title em { font-style: italic; color: var(--gold-light); }
+    .hero-sub { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(17px, 1.8vw, 21px); font-weight: 300; font-style: italic; line-height: 1.5; color: rgba(250,246,238,0.78); margin-bottom: 2.5rem; max-width: 380px; }
+    .btn { display: inline-block; padding: 0.65rem 1.6rem; border-radius: 40px; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-decoration: none; cursor: pointer; transition: all 0.2s; }
+    .btn-gold { background: var(--gold); color: var(--cream); border: 1.5px solid var(--gold); }
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--ink); }
+    .btn-outline { background: transparent; color: var(--cream); border: 1.5px solid rgba(250,246,238,0.45); margin-left: 0.75rem; }
+    .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
+    .hero-right { position: relative; padding: 2.5rem 2.5rem 2.5rem 0; display: flex; align-items: stretch; }
+    .hero-photo { position: relative; flex: 1; border-radius: 20px; overflow: hidden; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .hero-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--olive) 0%, transparent 30%); pointer-events: none; }
+
+    .manifesto { background: var(--sand); padding: 5rem 2.5rem; text-align: center; position: relative; overflow: hidden; }
+    .manifesto-blob { position: absolute; width: 300px; height: 300px; background: var(--gold-pale); border-radius: 50% 40% 60% 30%; top: -80px; left: -60px; pointer-events: none; }
+    .manifesto-blob2 { position: absolute; width: 200px; height: 200px; background: var(--olive-pale); opacity: 0.5; border-radius: 30% 60% 40% 70%; bottom: -50px; right: -40px; pointer-events: none; }
+    .manifesto-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+    .manifesto-icon { width: 36px; height: 36px; margin: 0 auto 2rem; display: block; }
+    .manifesto-lead { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(22px, 2.8vw, 28px); font-weight: 300; line-height: 1.5; color: var(--ink-mid); margin-bottom: 1.75rem; }
+    .manifesto-lead strong { font-weight: 600; color: var(--olive); font-style: normal; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 4px; text-decoration-thickness: 2px; }
+    .manifesto-text { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(16px, 1.9vw, 20px); font-weight: 300; line-height: 1.9; color: var(--ink-mid); }
+    .manifesto-text strong { font-weight: 600; color: var(--olive); font-style: normal; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 4px; text-decoration-thickness: 2px; }
+
+    section { padding: 5rem 2.5rem; }
+    .section-inner { max-width: 960px; margin: 0 auto; }
+    .section-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--olive-light); font-weight: 500; margin-bottom: 1rem; display: block; }
+    .section-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(28px, 3.5vw, 40px); font-weight: 300; line-height: 1.2; color: var(--olive); margin-bottom: 1.5rem; }
+    .section-title em { font-style: italic; color: var(--clay); }
+    .divider { width: 40px; height: 2px; background: var(--gold); border-radius: 2px; margin-bottom: 2rem; }
+    .body-text { font-size: 15px; font-weight: 300; line-height: 1.8; color: var(--ink-mid); max-width: 640px; }
+    .body-text + .body-text { margin-top: 1.25rem; }
+    .body-text strong { font-weight: 500; color: var(--olive); }
+    .body-text a { color: var(--gold); text-decoration: none; }
+    .body-text a:hover { text-decoration: underline; }
+
+    .over-grid { display: grid; grid-template-columns: 1fr 360px; gap: 4rem; align-items: start; }
+    .over-photo { border-radius: 24px 60px 24px 60px; overflow: hidden; position: sticky; top: 90px; }
+    .over-photo img { width: 100%; height: 500px; object-fit: cover; object-position: center top; display: block; }
+
+    .photo-break { width: 100%; height: 42vw; max-height: 500px; overflow: hidden; position: relative; }
+    .photo-break img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+    .photo-break-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 50%, var(--cream) 100%); }
+
+    .aanbod-bg { background: var(--sand); }
+    .aanbod-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+    .card { background: var(--cream); border: 1px solid var(--sand-deep); border-radius: 20px; padding: 2rem 2rem 2rem 2.25rem; position: relative; overflow: hidden; }
+    .card::before { content: ''; position: absolute; top: 1.5rem; bottom: 1.5rem; left: 0; width: 3px; background: var(--gold); border-radius: 0 3px 3px 0; }
+    .card-alt::before { background: var(--clay); }
+    .card-tag { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; margin-bottom: 1rem; }
+    .tag-gold { background: var(--gold-pale); color: var(--olive); }
+    .tag-clay { background: #f4ddd0; color: var(--clay); }
+    .card-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--olive); margin-bottom: 0.75rem; }
+    .card-text { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--ink-mid); }
+    .card-text strong { font-weight: 500; }
+    .card-text ul { padding-left: 1.25rem; margin-top: 0.75rem; }
+    .card-text li { margin-bottom: 0.5rem; }
+    .card-text a { color: var(--gold); text-decoration: none; }
+    .card-text a:hover { text-decoration: underline; }
+    .btn-card { display: inline-block; padding: 0.6rem 1.4rem; border-radius: 40px; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-decoration: none; cursor: pointer; transition: all 0.2s; background: var(--gold); color: var(--cream); border: 1.5px solid var(--gold); margin-top: 1.5rem; }
+    .btn-card:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--ink); }
+
+    .quotes-inner { max-width: 640px; margin: 0 auto; }
+    .quote-block { border-left: 2px solid var(--gold); padding-left: 1.5rem; margin-bottom: 2.5rem; }
+    .quote-block.alt { border-color: var(--clay-light); }
+    .quote-text { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 19px; font-style: italic; font-weight: 300; line-height: 1.6; color: var(--ink-mid); }
+    .quote-cite { display: block; margin-top: 0.75rem; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; color: var(--olive-light); }
+
+    .dialoog-list { list-style: none; margin-top: 1.5rem; }
+    .dialoog-list li { display: flex; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--sand-deep); font-size: 14px; font-weight: 300; line-height: 1.65; color: var(--ink-mid); }
+    .dialoog-list li:first-child { border-top: 1px solid var(--sand-deep); }
+    .dialoog-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 6px; }
+    .dialoog-list a { color: var(--olive); font-weight: 400; }
+    .dialoog-list a:hover { color: var(--gold); }
+
+    .contact-section { position: relative; overflow: hidden; padding: 6rem 2.5rem; text-align: center; background: var(--olive); }
+    .contact-blob { position: absolute; width: 350px; height: 350px; background: var(--gold); opacity: 0.07; border-radius: 55% 45% 40% 60% / 40% 60% 45% 55%; bottom: -80px; right: -60px; pointer-events: none; }
+    .contact-blob2 { position: absolute; width: 200px; height: 200px; background: var(--olive-pale); opacity: 0.08; border-radius: 30% 70% 60% 40%; top: -50px; left: 20%; pointer-events: none; }
+    .contact-inner { position: relative; z-index: 1; max-width: 500px; margin: 0 auto; }
+    .contact-inner .section-label { color: rgba(250,246,238,0.55); }
+    .contact-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(36px, 5vw, 56px); font-weight: 300; color: var(--cream); margin-bottom: 0.5rem; line-height: 1.1; }
+    .contact-title em { font-style: italic; color: var(--gold-light); }
+    .contact-divider { width: 40px; height: 2px; background: var(--gold); border-radius: 2px; margin: 1.25rem auto 1.5rem; }
+    .contact-details { font-size: 15px; font-weight: 300; line-height: 2.4; color: rgba(250,246,238,0.80); }
+    .contact-details a { color: var(--gold-light); text-decoration: none; }
+    .contact-details a:hover { text-decoration: underline; }
+
+    footer { background: var(--ink); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { display: flex; align-items: center; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 12px; color: rgba(250,246,238,0.4); text-decoration: none; letter-spacing: 0.04em; }
+    .footer-links a:hover { color: rgba(250,246,238,0.7); }
+    footer p { font-size: 11px; color: rgba(250,246,238,0.35); letter-spacing: 0.06em; }
+
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; max-width: 100%; }
+      .hero-right { height: 60vw; padding: 0 1.5rem 1.5rem; }
+      .hero-photo { border-radius: 16px; }
+      .hero-photo::after { background: linear-gradient(to bottom, var(--olive) 0%, transparent 30%); }
+      .hero-left { padding: 3rem 1.5rem; }
+      .over-grid { grid-template-columns: 1fr; }
+      .over-photo { position: static; border-radius: 16px; }
+      .over-photo img { height: 300px; }
+      .aanbod-grid { grid-template-columns: 1fr; }
+      nav { padding: 0.85rem 1.5rem; }
+      nav ul { gap: 1rem; }
+      section { padding: 3.5rem 1.5rem; }
+      .manifesto { padding: 3.5rem 1.5rem; }
+      .contact-section { padding: 4rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="images/logo.svg" alt="Isabel Brouwer" style="height:48px; width:auto;" />
+  </a>
+  <ul>
+    <li><a href="#over">Over Isabel</a></li>
+    <li><a href="#aanbod">Aanbod</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero-wrap">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-blob"></div>
+      <div class="hero-blob2"></div>
+      <p class="hero-eyebrow">Welkom, ik ben Isabel</p>
+      <h1 class="hero-title">Gecommitteerd aan de gezondheid van <em>mens, aarde en onderneming.</em></h1>
+      <p class="hero-sub">Verbinder met een missie die groter is dan ikzelf.</p>
+      <div>
+        <a href="#contact" class="btn btn-gold">Let's connect</a>
+        <a href="#over" class="btn btn-outline">Meer lezen</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-photo">
+        <img src="images/img-closeup.jpeg" alt="Isabel Brouwer" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="manifesto">
+  <div class="manifesto-blob"></div>
+  <div class="manifesto-blob2"></div>
+  <div class="manifesto-inner">
+    <svg class="manifesto-icon" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="17" fill="none" stroke="#c8972a" stroke-width="1.2"/>
+      <circle cx="18" cy="18" r="11" fill="none" stroke="#c8972a" stroke-width="0.9"/>
+      <circle cx="18" cy="18" r="5"  fill="none" stroke="#c8972a" stroke-width="0.7"/>
+      <circle cx="18" cy="18" r="1.5" fill="#c8972a"/>
+    </svg>
+    <p class="manifesto-lead">Ik geloof dat <strong>verbinding</strong> essentieel is.</p>
+    <p class="manifesto-text">
+      De verbinding tussen lichaam en geest, voor de gezondheid van mensen.<br>
+      De verbinding tussen ondernemer en onderneming, om de juiste keuzes te kunnen maken.<br><br>
+      Het is mijn missie om mensen zich bewust te maken van die verbinding.
+    </p>
+  </div>
+</div>
+
+<section id="over">
+  <div class="section-inner">
+    <div class="over-grid">
+      <div>
+        <span class="section-label">Over mij</span>
+        <h2 class="section-title">Over <em>mij</em></h2>
+        <div class="divider"></div>
+        <p class="body-text">Ik ben een visionair met een scherp oog voor wat er beter kan en de energie om dat ook daadwerkelijk in beweging te zetten. Op mijn 15e begon ik met ondernemen, gedreven door de drang op te lossen wat niet werkte. Toch koos ik daarna voor het geijkte pad: ik studeerde in Utrecht, Dublin en Amsterdam, en accepteerde een baan bij de overheid.</p>
+        <p class="body-text">Maar het schuurde, de vaste kaders van het systeem pasten me niet. Na vijf jaar en twee lange reizen besloot ik terug te keren naar mijn ondernemende natuur. Ik maakte de overstap naar de zakelijke wereld, waar ik jarenlang werkte met snelgroeiende startups en internationale scale-ups in de techwereld.</p>
+        <p class="body-text">Het verlies van mijn vader en de inzichten uit zijn ziekteproces brachten me echter terug naar de essentie van wat er werkelijk toe doet voor mij: luisteren naar het lichaam, leven vanuit verbinding en zelf bouwen aan iets dat de wereld écht beter maakt.</p>
+        <p class="body-text">Na een periode van persoonlijke verdieping en een sabbatical met mijn gezin, besloot ik in 2023 mijn leven te wijden aan mijn levensmissie: het eren van de verbinding tussen lichaam, geest, samenleving en aarde door de realisatie van <strong>Healing Grounds</strong>.</p>
+        <p class="body-text">Ook mijn werk voor ondernemers groeide mee. Sinds 2026 integreer ik het bouwen van Go-to-Market strategieën met de energetische verbinding tussen ondernemer en creatie. Ik help ondernemers om inzichten vanuit een dieper bewustzijn te vertalen naar een concrete, nuchtere strategie voor hun onderneming.</p>
+        <p class="body-text">Ik ben eerlijk, scherp en zacht tegelijk. Ik ben aanwezig in het moment en bij wat dat van me vraagt (al blijf ik een mens, geen Boeddha).</p>
+      </div>
+      <div class="over-photo">
+        <img src="images/img-hg.jpeg" alt="Isabel Brouwer bij Healing Grounds" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="photo-break">
+  <img src="images/img-tree-overlay.jpg" alt="Isabel Brouwer in het bos" />
+  <div class="photo-break-overlay"></div>
+</div>
+
+<section id="aanbod" class="aanbod-bg">
+  <div class="section-inner">
+    <span class="section-label">Aanbod</span>
+    <h2 class="section-title">Vanuit verbinding <em>gidsen</em></h2>
+    <div class="divider"></div>
+    <p class="body-text">Ik heb mijn levensmissie gevonden in de creatie van <strong><a href="https://www.healinggrounds.org" target="_blank">Healing Grounds</a></strong>. Daarnaast heb ik mijn achtergrond in de dynamische startup-wereld verweven met energetisch werk. Ik gids ondernemers om uit hun hoofd te stappen en te luisteren naar wat hun onderneming nodig heeft. Vanuit de bewuste verbinding ontstaat helderheid over de volgende stap.</p>
+    <div class="aanbod-grid">
+      <div class="card">
+        <span class="card-tag tag-gold">Platform &amp; plek</span>
+        <h3 class="card-title">Healing Grounds</h3>
+        <div class="card-text">
+          <p><strong>Wanneer het lichaam spreekt. Helpen wij je luisteren.</strong></p>
+          <p style="margin-top:0.75rem">Healing Grounds beoogt mensen een plek te bieden waar ze terecht kunnen met lichamelijke, mentale, emotionele, sociale en spirituele klachten en wensen.</p>
+          <p style="margin-top:0.75rem"><strong>Zelfstandig sta je sterk. Samen worden we essentieel.</strong></p>
+          <p style="margin-top:0.5rem">Betrouwbare en ervaren professionals werken bij Healing Grounds samen om mensen te ondersteunen bij het bevorderen van hun gezondheid.</p>
+          <p style="margin-top:1rem"><a href="https://www.healinggrounds.org" target="_blank">Lees meer op de website van Healing Grounds →</a></p>
+        </div>
+      </div>
+      <div class="card card-alt">
+        <span class="card-tag tag-clay">Begeleiding</span>
+        <h3 class="card-title">Growth Guide</h3>
+        <div class="card-text">
+          <p><strong>Groei vanuit verbinding</strong></p>
+          <p style="margin-top:0.75rem">Als (inter)national growth guide help ik founders bij het realiseren van impactvolle groei. Ik ben geen coach voor ondernemers, maar een gids voor je business.</p>
+          <p style="margin-top:0.5rem">Ik betrek het hart van de ondernemer om de koers van de onderneming helder te krijgen.</p>
+          <p style="margin-top:1rem"><strong>Hoe we samen kunnen werken</strong></p>
+          <ul style="margin-top:0.5rem">
+            <li><strong>Een dag in het veld van je onderneming:</strong> Een intensieve sessie waarbij we via beweging, ademwerk en meditatie de ruis wegfilteren. We voelen in op wat jouw bedrijf komt brengen en wat het nu nodig heeft. We eindigen met een concrete, tastbare volgende stap.</li>
+            <li style="margin-top:0.75rem"><strong>Strategy &amp; GTM Begeleiding:</strong> Voor het bouwen en valideren van (internationale) Go-to-Market strategieën. Een proces van 6 tot 9 maanden waarin we de bezieling van je bedrijf vertalen naar een solide marktpositie.</li>
+          </ul>
+          <a href="#contact" class="btn btn-gold">Neem contact op</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <span class="section-label">Wat anderen zeggen</span>
+    <div class="quotes-inner" style="margin-top:2rem">
+      <div class="quote-block">
+        <p class="quote-text">"Isabel hielp ons verbinden met de essentie van onze creatie en met elkaar als co-founders. Vanuit die diepe verbinding werd moeiteloos helder wat onze volgende stappen zijn."</p>
+        <span class="quote-cite">Nelieke &amp; Oscar, co-founders van RadicAI Recruitment</span>
+      </div>
+      <div class="quote-block alt">
+        <p class="quote-text">"Ik had nog nooit ademwerk of een meditatie gedaan, maar de nuchtere begeleiding van Isabel hielp me een diepere laag van bewustzijn te bereiken, van waaruit precies helder werd wat mijn onderneming van me nodig heeft."</p>
+        <span class="quote-cite">Danielle Ackermans-Adams, Adca Contractbeheer</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="aanbod-bg">
+  <div class="section-inner">
+    <span class="section-label">In dialoog</span>
+    <h2 class="section-title">In <em>dialoog</em></h2>
+    <div class="divider"></div>
+    <p class="body-text">Ik deel mijn visie op de verbinding tussen lichaam en geest, en de impact daarvan op ons leven en werk, graag via verschillende kanalen. Mijn doel is altijd om het bewustzijn over deze essentie te vergroten en de dialoog hierover op gang te brengen, of dat nu op een podium is, in een boardroom, of via een podcast.</p>
+    <p class="body-text" style="margin-top:1rem"><strong>Spreken &amp; Gastoptredens</strong><br>Ben je op zoek naar een spreker die de mensen raakt en de verbinding tussen lichaam en geest ter plekke laat ervaren? Of een gast voor een podcast over bewustzijn en leiderschap? Ik deel mijn verhaal graag om beweging te creëren. Laten we de mogelijkheden bespreken.</p>
+    <ul class="dialoog-list">
+      <li><span class="dialoog-dot"></span><span>Interview over Healing Grounds in het <strong>Tijdschrift voor Integrale Geneeskunde 2025-02</strong> (<a href="TIG-2-2025_Isabel-Brouwer.pdf" target="_blank">download PDF</a>).</span></li>
+      <li><span class="dialoog-dot"></span><span><strong><a href="https://www.gaatwelgoedtoch.nl" target="_blank">Gaat wel goed toch?</a></strong> Podcast over verbinding waarbij ik op het eind van een aantal afleveringen de maakster een liefdevolle spiegel voorhoud.</span></li>
+      <li><span class="dialoog-dot"></span><span><strong><a href="https://gezondgooi.foleon.com/inwoners-aan-zet/start/je-lichaam-spreekt" target="_blank">Je lichaam spreekt – durf je te luisteren?</a></strong> Interview in het magazine van Gezond Gooi.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="contact-blob"></div>
+  <div class="contact-blob2"></div>
+  <div class="contact-inner">
+    <span class="section-label">Laten we verbinden</span>
+    <h2 class="contact-title">Let's <em>connect</em></h2>
+    <div class="contact-divider"></div>
+    <div class="contact-details">
+      <a href="mailto:contact@isabelbrouwer.nl">contact@isabelbrouwer.nl</a><br>
+      <a href="tel:+31683489358">06-83489358</a><br>
+      <a href="https://www.linkedin.com/in/ibrouwer" target="_blank">LinkedIn</a>
+    </div>
+    <div style="margin-top:2rem">
+      <a href="mailto:contact@isabelbrouwer.nl" class="btn btn-gold">Stuur een bericht</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <img src="images/logo.svg" alt="Isabel Brouwer" style="height:36px; width:auto; opacity:0.55; filter:brightness(1.4);" />
+  </div>
+  <p>&#169; Isabel Brouwer 2026</p>
+  <ul class="footer-links">
+    <li><a href="/privacybeleid">Privacybeleid</a></li>
+    <li><a href="/voorwaarden">Voorwaarden</a></li>
+    <li><a href="https://www.linkedin.com/in/ibrouwer" target="_blank">LinkedIn</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

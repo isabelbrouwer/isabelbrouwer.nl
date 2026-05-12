@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }} — Isabel Brouwer</title>
+  <meta name="description" content="{{ description }}" />
+  <link rel="icon" href="/images/icon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/images/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.svg" alt="Isabel Brouwer" style="height:48px; width:auto;" />
+  </a>
+  <ul>
+    <li><a href="/#over">Over Isabel</a></li>
+    <li><a href="/#aanbod">Aanbod</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+{{ content | safe }}
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" class="cookie-banner">
+  <p class="cookie-text">Deze website gebruikt uitsluitend anonieme bezoekersstatistieken (Google Analytics). Er worden geen persoonlijke gegevens verzameld of gedeeld. <a href="/privacybeleid/">Meer info</a></p>
+  <button id="cookie-ok" class="cookie-btn">Begrepen</button>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <img src="/images/logo.svg" alt="Isabel Brouwer" style="height:36px; width:auto; opacity:0.55; filter:brightness(1.4);" />
+  </div>
+  <p>&#169; Isabel Brouwer 2026</p>
+  <ul class="footer-links">
+    <li><a href="/privacybeleid/">Privacybeleid</a></li>
+    <li><a href="/voorwaarden/">Voorwaarden</a></li>
+    <li><a href="https://www.linkedin.com/in/ibrouwer" target="_blank">LinkedIn</a></li>
+  </ul>
+</footer>
+
+<script>
+  var GA_ID = 'G-87LJDD43VE';
+
+  function loadGA() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var banner = document.getElementById('cookie-banner');
+    var okBtn  = document.getElementById('cookie-ok');
+
+    if (localStorage.getItem('ib_consent') === '1') {
+      loadGA();
+    } else {
+      banner.classList.add('cookie-banner--visible');
+      okBtn.addEventListener('click', function () {
+        localStorage.setItem('ib_consent', '1');
+        banner.classList.remove('cookie-banner--visible');
+        loadGA();
+      });
+    }
+  });
+</script>
+</body>
+</html>

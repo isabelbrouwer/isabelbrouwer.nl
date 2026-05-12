@@ -1,0 +1,187 @@
+:root {
+  --olive:        #4a5a2c;
+  --olive-light:  #7a8c6e;
+  --olive-pale:   #c8d4b8;
+  --gold:         #c8972a;
+  --gold-light:   #e8c06a;
+  --gold-pale:    #f5e8c8;
+  --cream:        #faf6ee;
+  --sand:         #f0e8d4;
+  --sand-deep:    #ddd0b4;
+  --clay:         #c4724a;
+  --clay-light:   #e8aa88;
+  --ink:          #2a2416;
+  --ink-mid:      #4a3c28;
+  --ink-light:    #7a6a50;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+/* ── NAV ── */
+nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid var(--sand-deep); display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 2.5rem; }
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+nav ul { list-style: none; display: flex; gap: 2rem; }
+nav ul a { text-decoration: none; font-size: 13px; font-weight: 400; letter-spacing: 0.06em; color: var(--olive); transition: color 0.2s; }
+nav ul a:hover { color: var(--gold); }
+
+/* ── HERO ── */
+.hero { display: grid; grid-template-columns: 3fr 2fr; min-height: 88vh; background: var(--olive); }
+.hero-left { padding: 5rem 3.5rem 5rem 4.5rem; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+.hero-blob { position: absolute; width: 420px; height: 420px; background: var(--gold); opacity: 0.08; border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%; bottom: -120px; left: -80px; pointer-events: none; }
+.hero-blob2 { position: absolute; width: 220px; height: 220px; background: var(--gold-light); opacity: 0.06; border-radius: 40% 60% 30% 70% / 60% 30% 70% 40%; top: -50px; right: 60px; pointer-events: none; }
+.hero-eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 2rem; font-weight: 400; }
+.hero-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(36px, 4.6vw, 66px); font-weight: 300; line-height: 1.15; color: var(--cream); margin-bottom: 1.5rem; }
+.hero-title em { font-style: italic; color: var(--gold-light); }
+.hero-sub { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(16px, 1.6vw, 20px); font-weight: 300; font-style: italic; line-height: 1.5; color: rgba(250,246,238,0.72); margin-bottom: 2.5rem; }
+.hero-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.hero-right { padding: 3rem 3rem 3rem 0; display: flex; align-items: stretch; }
+.hero-photo { flex: 1; border-radius: 38% 62% 58% 42% / 46% 42% 58% 54%; overflow: hidden; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 62% top; display: block; }
+
+/* ── BUTTONS ── */
+.btn { display: inline-block; padding: 0.65rem 1.6rem; border-radius: 40px; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-decoration: none; cursor: pointer; transition: all 0.2s; }
+.btn-gold { background: var(--gold); color: var(--cream); border: 1.5px solid var(--gold); }
+.btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--ink); }
+.btn-outline { background: transparent; color: var(--cream); border: 1.5px solid rgba(250,246,238,0.45); margin-left: 0.75rem; }
+.btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+/* ── MANIFESTO ── */
+.manifesto { background: var(--sand); padding: 5rem 2.5rem; text-align: center; position: relative; overflow: hidden; }
+.manifesto-blob { position: absolute; width: 300px; height: 300px; background: var(--gold-pale); border-radius: 50% 40% 60% 30%; top: -80px; left: -60px; pointer-events: none; }
+.manifesto-blob2 { position: absolute; width: 200px; height: 200px; background: var(--olive-pale); opacity: 0.5; border-radius: 30% 60% 40% 70%; bottom: -50px; right: -40px; pointer-events: none; }
+.manifesto-inner { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; }
+.manifesto-icon { width: 36px; height: 36px; margin: 0 auto 2rem; display: block; }
+.manifesto-lead { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(22px, 2.8vw, 28px); font-weight: 300; line-height: 1.5; color: var(--ink-mid); margin-bottom: 1.75rem; }
+.manifesto-lead strong { font-weight: 600; color: var(--olive); font-style: normal; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 4px; text-decoration-thickness: 2px; }
+.manifesto-text { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(16px, 1.9vw, 20px); font-weight: 300; line-height: 1.9; color: var(--ink-mid); }
+.manifesto-text strong { font-weight: 600; color: var(--olive); font-style: normal; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 4px; text-decoration-thickness: 2px; }
+
+/* ── SECTIONS ── */
+section { padding: 5rem 2.5rem; }
+.section-inner { max-width: 960px; margin: 0 auto; }
+.section-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--olive-light); font-weight: 500; margin-bottom: 1rem; display: block; }
+.section-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(28px, 3.5vw, 40px); font-weight: 300; line-height: 1.2; color: var(--olive); margin-bottom: 1.5rem; }
+.section-title em { font-style: italic; color: var(--clay); }
+.divider { width: 40px; height: 2px; background: var(--gold); border-radius: 2px; margin-bottom: 2rem; }
+.body-text { font-size: 15px; font-weight: 300; line-height: 1.8; color: var(--ink-mid); max-width: 640px; }
+.body-text + .body-text { margin-top: 1.25rem; }
+.body-text strong { font-weight: 500; color: var(--olive); }
+.body-text a { color: var(--gold); text-decoration: none; }
+.body-text a:hover { text-decoration: underline; }
+
+/* ── OVER MIJ ── */
+.over-grid { display: grid; grid-template-columns: 1fr 360px; gap: 4rem; align-items: start; }
+.over-photo { border-radius: 24px 60px 24px 60px; overflow: hidden; position: sticky; top: 90px; }
+.over-photo img { width: 100%; height: 500px; object-fit: cover; object-position: center top; display: block; }
+
+/* ── PHOTO BREAK ── */
+.photo-break { width: 100%; height: 42vw; max-height: 500px; overflow: hidden; position: relative; }
+.photo-break img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+.photo-break-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 50%, var(--cream) 100%); }
+
+/* ── AANBOD ── */
+.aanbod-bg { background: var(--sand); }
+.aanbod-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+.card { background: var(--cream); border: 1px solid var(--sand-deep); border-radius: 20px; padding: 2rem 2rem 2rem 2.25rem; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+.card::before { content: ''; position: absolute; top: 1.5rem; bottom: 1.5rem; left: 0; width: 3px; background: var(--gold); border-radius: 0 3px 3px 0; }
+.card-alt::before { background: var(--clay); }
+.card-tag { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; margin-bottom: 1rem; align-self: flex-start; }
+.hg-logo-link { display: flex; align-items: center; justify-content: center; margin-top: 1.5rem; }
+.hg-logo { height: 72px; width: auto; max-width: 100%; display: block; opacity: 0.85; transition: opacity 0.2s; }
+.hg-logo-link:hover .hg-logo { opacity: 1; }
+.tag-gold { background: var(--gold-pale); color: var(--olive); }
+.tag-clay { background: #f4ddd0; color: var(--clay); }
+.card-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--olive); margin-bottom: 0.75rem; }
+.card-text { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--ink-mid); flex: 1; }
+.card-text strong { font-weight: 500; }
+.card-text ul { padding-left: 1.25rem; margin-top: 0.75rem; }
+.card-text li { margin-bottom: 0.5rem; }
+.card-text a:not(.btn) { color: var(--gold); text-decoration: none; }
+.card-text a:not(.btn):hover { text-decoration: underline; }
+
+/* ── QUOTES ── */
+.quotes-inner { max-width: 640px; margin: 0 auto; }
+.quote-block { border-left: 2px solid var(--gold); padding-left: 1.5rem; margin-bottom: 2.5rem; }
+.quote-block.alt { border-color: var(--clay-light); }
+.quote-text { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 19px; font-style: italic; font-weight: 300; line-height: 1.6; color: var(--ink-mid); }
+.quote-cite { display: block; margin-top: 0.75rem; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; color: var(--olive-light); }
+
+/* ── IN DIALOOG ── */
+.dialoog-list { list-style: none; margin-top: 1.5rem; }
+.dialoog-list li { display: flex; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--sand-deep); font-size: 14px; font-weight: 300; line-height: 1.65; color: var(--ink-mid); }
+.dialoog-list li:first-child { border-top: 1px solid var(--sand-deep); }
+.dialoog-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 6px; }
+.dialoog-list a { color: var(--olive); font-weight: 400; }
+.dialoog-list a:hover { color: var(--gold); }
+
+/* ── CONTACT ── */
+.contact-section { position: relative; overflow: hidden; padding: 6rem 2.5rem; text-align: center; background: var(--olive); }
+.contact-blob { position: absolute; width: 350px; height: 350px; background: var(--gold); opacity: 0.07; border-radius: 55% 45% 40% 60% / 40% 60% 45% 55%; bottom: -80px; right: -60px; pointer-events: none; }
+.contact-blob2 { position: absolute; width: 200px; height: 200px; background: var(--olive-pale); opacity: 0.08; border-radius: 30% 70% 60% 40%; top: -50px; left: 20%; pointer-events: none; }
+.contact-inner { position: relative; z-index: 1; max-width: 500px; margin: 0 auto; }
+.contact-inner .section-label { color: rgba(250,246,238,0.55); }
+.contact-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(36px, 5vw, 56px); font-weight: 300; color: var(--cream); margin-bottom: 0.5rem; line-height: 1.1; }
+.contact-title em { font-style: italic; color: var(--gold-light); }
+.contact-divider { width: 40px; height: 2px; background: var(--gold); border-radius: 2px; margin: 1.25rem auto 1.5rem; }
+.contact-details { font-size: 15px; font-weight: 300; line-height: 2.4; color: rgba(250,246,238,0.80); }
+.contact-details a { color: var(--gold-light); text-decoration: none; }
+.contact-details a:hover { text-decoration: underline; }
+
+/* ── FOOTER ── */
+footer { background: var(--ink); padding: 2rem 2.5rem; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; }
+.footer-logo { display: flex; align-items: center; }
+.footer-links { display: flex; gap: 2rem; list-style: none; justify-self: end; }
+.footer-links a { font-size: 12px; color: rgba(250,246,238,0.4); text-decoration: none; letter-spacing: 0.04em; }
+.footer-links a:hover { color: rgba(250,246,238,0.7); }
+footer p { font-size: 11px; color: rgba(250,246,238,0.35); letter-spacing: 0.06em; text-align: center; }
+
+/* ── PAGINA HEADER (voorwaarden, privacy) ── */
+.page-header { background: var(--olive); padding: 5rem 2.5rem 4rem; }
+.page-header-inner { max-width: 720px; margin: 0 auto; }
+.page-header-inner .section-label { color: rgba(250,246,238,0.55); }
+.page-header-inner .divider { margin-bottom: 1rem; }
+.page-header-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(32px, 4vw, 48px); font-weight: 300; line-height: 1.2; color: var(--cream); margin-bottom: 1rem; }
+.page-header-title em { font-style: italic; color: var(--gold-light); }
+.page-header-sub { font-size: 13px; font-weight: 300; color: rgba(250,246,238,0.6); letter-spacing: 0.03em; line-height: 1.8; }
+
+/* ── TERMS / PRIVACY CONTENT ── */
+.terms-page { padding: 4rem 2.5rem 6rem; }
+.terms-inner { max-width: 720px; margin: 0 auto; }
+.terms-block { padding: 2rem 0; border-bottom: 1px solid var(--sand-deep); }
+.terms-block:last-child { border-bottom: none; }
+.terms-heading { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 400; color: var(--olive); margin-bottom: 0.75rem; }
+.terms-list { padding-left: 1.25rem; margin-top: 0.75rem; font-size: 15px; font-weight: 300; line-height: 1.8; color: var(--ink-mid); }
+.terms-list li { margin-bottom: 0.5rem; }
+.terms-list strong { font-weight: 500; color: var(--ink); }
+
+/* ── SIMPELE PAGINA'S (privacy, voorwaarden) ── */
+.simple-page { padding: 5rem 2.5rem; min-height: 60vh; }
+.simple-page-inner { max-width: 720px; margin: 0 auto; }
+
+/* ── COOKIE BANNER ── */
+.cookie-banner { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 500; background: var(--ink); align-items: center; gap: 1.5rem; padding: 1rem 2.5rem; font-size: 13px; font-weight: 300; line-height: 1.5; }
+.cookie-banner--visible { display: flex; }
+.cookie-text { flex: 1; color: rgba(250,246,238,0.80); }
+.cookie-text a { color: var(--gold-light); text-decoration: none; }
+.cookie-text a:hover { text-decoration: underline; }
+.cookie-btn { background: var(--gold); color: var(--cream); border: none; border-radius: 40px; padding: 0.5rem 1.25rem; font-size: 13px; font-weight: 500; font-family: inherit; cursor: pointer; white-space: nowrap; transition: background 0.2s, color 0.2s; flex-shrink: 0; }
+.cookie-btn:hover { background: var(--gold-light); color: var(--ink); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 3.5rem 1.5rem 2.5rem; }
+  .hero-right { padding: 0 1.5rem 3rem; height: 65vw; }
+  .hero-photo { border-radius: 16px; }
+  .over-grid { grid-template-columns: 1fr; }
+  .over-photo { position: static; border-radius: 16px; }
+  .over-photo img { height: 300px; }
+  .aanbod-grid { grid-template-columns: 1fr; }
+  nav { padding: 0.85rem 1.5rem; }
+  nav ul { gap: 1rem; }
+  section { padding: 3.5rem 1.5rem; }
+  .manifesto { padding: 3.5rem 1.5rem; }
+  .contact-section { padding: 4rem 1.5rem; }
+}
