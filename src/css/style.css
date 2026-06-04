@@ -193,8 +193,9 @@ footer p { font-size: 11px; color: rgba(250,246,238,0.35); letter-spacing: 0.06e
   nav { flex-direction: column; align-items: flex-start; gap: 0.6rem; padding: 0.75rem 1.25rem; }
   nav ul { gap: 1.25rem; }
   footer { grid-template-columns: 1fr; gap: 1rem; padding: 1.75rem 1.25rem; text-align: center; }
-  .footer-logos { justify-content: center; }
-  .footer-links { justify-content: center; gap: 1.25rem; }
+  .footer-logos { justify-content: center; order: 1; }
+  .footer-links { justify-content: center; gap: 1.25rem; order: 2; }
+  footer > p { order: 3; }
   .cookie-banner { flex-direction: column; align-items: flex-start; gap: 0.75rem; padding: 1rem 1.25rem; }
   .hero-left { padding: 2.5rem 1.25rem 2rem; }
   .hero-right { height: 75vw; padding: 0 1.25rem 2.5rem; }
