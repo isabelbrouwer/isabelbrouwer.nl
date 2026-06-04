@@ -87,12 +87,14 @@ section { padding: 5rem 2.5rem; }
 .card { background: var(--cream); border: 1px solid var(--sand-deep); border-radius: 20px; padding: 2rem 2rem 2rem 2.25rem; position: relative; overflow: hidden; display: flex; flex-direction: column; }
 .card::before { content: ''; position: absolute; top: 1.5rem; bottom: 1.5rem; left: 0; width: 3px; background: var(--gold); border-radius: 0 3px 3px 0; }
 .card-alt::before { background: var(--clay); }
+.card-sage::before { background: var(--olive-light); }
 .card-tag { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; margin-bottom: 1rem; align-self: flex-start; }
 .hg-logo-link { display: flex; align-items: center; justify-content: center; margin-top: 1.5rem; }
 .hg-logo { height: 72px; width: auto; max-width: 100%; display: block; opacity: 0.85; transition: opacity 0.2s; }
 .hg-logo-link:hover .hg-logo { opacity: 1; }
 .tag-gold { background: var(--gold-pale); color: var(--olive); }
 .tag-clay { background: #f4ddd0; color: var(--clay); }
+.tag-sage { background: #e4ecda; color: var(--olive); }
 .card-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--olive); margin-bottom: 0.75rem; }
 .card-text { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--ink-mid); flex: 1; }
 .card-text strong { font-weight: 500; }
