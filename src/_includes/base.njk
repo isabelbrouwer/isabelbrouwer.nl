@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="{{ lang | default('nl') }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,6 +15,17 @@
 <body>
 
 <nav>
+  {% if lang == 'en' %}
+  <a href="/en/" class="nav-logo">
+    <img src="/images/logo.svg" alt="Isabel Brouwer" style="height:48px; width:auto;" />
+  </a>
+  <ul>
+    <li><a href="/en/#over">About Isabel</a></li>
+    <li><a href="/en/#aanbod">Offerings</a></li>
+    <li><a href="/en/#contact">Contact</a></li>
+    <li><a href="{{ langSwitcherUrl | default('/') }}" class="lang-switch">NL</a></li>
+  </ul>
+  {% else %}
   <a href="/" class="nav-logo">
     <img src="/images/logo.svg" alt="Isabel Brouwer" style="height:48px; width:auto;" />
   </a>
@@ -22,20 +33,27 @@
     <li><a href="/#over">Over Isabel</a></li>
     <li><a href="/#aanbod">Aanbod</a></li>
     <li><a href="/#contact">Contact</a></li>
+    <li><a href="{{ langSwitcherUrl | default('/en/') }}" class="lang-switch">EN</a></li>
   </ul>
+  {% endif %}
 </nav>
 
 {{ content | safe }}
 
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner">
+  {% if lang == 'en' %}
+  <p class="cookie-text">This website uses anonymous visitor statistics only (Google Analytics). No personal data is collected or shared. <a href="/en/privacy/">More info</a></p>
+  <button id="cookie-ok" class="cookie-btn">Got it</button>
+  {% else %}
   <p class="cookie-text">Deze website gebruikt uitsluitend anonieme bezoekersstatistieken (Google Analytics). Er worden geen persoonlijke gegevens verzameld of gedeeld. <a href="/privacybeleid/">Meer info</a></p>
   <button id="cookie-ok" class="cookie-btn">Begrepen</button>
+  {% endif %}
 </div>
 
 <footer>
   <div class="footer-logos">
-    <a href="/" class="footer-logo">
+    <a href="{{ '/en/' if lang == 'en' else '/' }}" class="footer-logo">
       <img src="/images/logo.svg" alt="Isabel Brouwer" style="height:36px; width:auto; opacity:0.55; filter:brightness(1.4);" />
     </a>
     <a href="https://www.healinggrounds.org" target="_blank" class="footer-logo">
@@ -43,11 +61,19 @@
     </a>
   </div>
   <p>&#169; Isabel Brouwer 2026</p>
+  {% if lang == 'en' %}
+  <ul class="footer-links">
+    <li><a href="/en/privacy/">Privacy policy</a></li>
+    <li><a href="/en/terms/">Terms</a></li>
+    <li><a href="https://www.linkedin.com/in/ibrouwer" target="_blank">LinkedIn</a></li>
+  </ul>
+  {% else %}
   <ul class="footer-links">
     <li><a href="/privacybeleid/">Privacybeleid</a></li>
     <li><a href="/voorwaarden/">Voorwaarden</a></li>
     <li><a href="https://www.linkedin.com/in/ibrouwer" target="_blank">LinkedIn</a></li>
   </ul>
+  {% endif %}
 </footer>
 
 <script>
