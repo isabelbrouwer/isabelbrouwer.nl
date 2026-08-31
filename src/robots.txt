@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# AI-crawlers expliciet welkom
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+Sitemap: https://isabelbrouwer.nl/sitemap.xml
